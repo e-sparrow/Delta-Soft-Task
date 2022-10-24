@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "651042263035",
+    "project_id": "vorob-7f9c1",
+    "storage_bucket": "vorob-7f9c1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:651042263035:android:4134bb4c6a2c6ad99f455e",
+        "android_client_info": {
+          "package_name": "noisteuro.sonto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "651042263035-j31tqbhd4d7uf8vimqnimc2lb54em8vc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJqiiKbIRMgGNW02JhSJC4qYzT3o7C-iE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "651042263035-j31tqbhd4d7uf8vimqnimc2lb54em8vc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
