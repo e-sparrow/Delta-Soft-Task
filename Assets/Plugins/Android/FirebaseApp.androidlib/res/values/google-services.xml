@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_web_client_id">
+  <string name="gcm_defaultSenderId" translatable="false">651042263035</string>
+  <string name="google_storage_bucket" translatable="false">vorob-7f9c1.appspot.com</string>
+  <string name="project_id" translatable="false">vorob-7f9c1</string>
+  <string name="google_api_key" translatable="false">AIzaSyCJqiiKbIRMgGNW02JhSJC4qYzT3o7C-iE</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCJqiiKbIRMgGNW02JhSJC4qYzT3o7C-iE</string>
+  <string name="google_app_id" translatable="false">1:651042263035:android:4134bb4c6a2c6ad99f455e</string>
+  <string name="default_web_client_id" translatable="false">651042263035-j31tqbhd4d7uf8vimqnimc2lb54em8vc.apps.googleusercontent.com</string>
+</resources>

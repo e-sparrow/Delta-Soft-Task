@@ -1,0 +1,31 @@
+{
+    "name": "EntryAssembly",
+    "rootNamespace": "",
+    "references": [
+        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4",
+        "GUID:947c4c93c5479744f8f43bab8b267ed4",
+        "GUID:a44e2328085e50d4e9aa00e5a53bc0f9",
+        "GUID:42d48458dda72914a9491b78c1e892e7",
+        "GUID:9e287cc7b3c8a0245a7d36254472d3c8",
+        "GUID:0a00d142456af1b28922ea36298bfe9e"
+    ],
+    "includePlatforms": [
+        "Android",
+        "Editor",
+        "WindowsStandalone64"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "Zenject-usage.dll",
+        "Firebase.App.dll",
+        "Firebase.RemoteConfig.dll",
+        "Firebase.Platform.dll",
+        "Firebase.TaskExtension.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

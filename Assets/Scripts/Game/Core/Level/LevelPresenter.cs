@@ -11,7 +11,7 @@ namespace Game.Core.Level
             _gameLoop = gameLoop;
         }
 
-        private const int SceneIndex = 0;
+        private const int SceneIndex = 1;
 
         private readonly IGameLoop _gameLoop;
         

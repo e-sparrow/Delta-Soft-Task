@@ -34,7 +34,7 @@ namespace Game.UI.Timer
 
             _tweener?.Kill();
             _tweener = DOTween.To(GetValue, SetValue, 0f, time).SetEase(Ease.Linear)
-                .OnPlay(() => panel.rectTransform.DOSizeDelta(Vector2.zero, time / 2)
+                .OnPlay(() => panel.rectTransform.DOScale(Vector2.zero, time / 2)
                 .OnComplete(() => text.transform.DOShakePosition(time / 2)))
                 .OnComplete(Complete);
 
