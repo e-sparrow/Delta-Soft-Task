@@ -7,48 +7,35 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Utils;
-using VoltstroStudios.UnityWebBrowser.Core;
 using Zenject;
 
 namespace Game.Entry
 {
     public class EntryPresenter : IInitializable, ILateDisposable
     {
-        public EntryPresenter(BaseUwbClientManager webBrowser, GameObject webBrowserView, Button startButton)
+        public EntryPresenter(Button startButton)
         {
-            _webBrowser = webBrowser;
-            _webBrowserView = webBrowserView;
             _startButton = startButton;
         }
 
         private const int SceneIndex = 1;
         private const string UrlFirebaseKey = "url";
 
-        private readonly BaseUwbClientManager _webBrowser;
-        private readonly GameObject _webBrowserView;
         private readonly Button _startButton;
 
         private bool _isStarted = false;
 
-        private void OpenUrl(string url)
-        {
-            _startButton.gameObject.SetActive(false);
-            _webBrowserView.SetActive(true);
-            _webBrowser.browserClient.initialUrl = url;
-            _webBrowser.browserClient.LoadUrl(url);
-        }
-
         public void Initialize()
         {
-            _startButton.onClick.AddListener(Start);
+            _startButton.onClick.AddListener(Click);
         }
 
         public void LateDispose()
         {
-            _startButton.onClick.RemoveListener(Start);
+            _startButton.onClick.RemoveListener(Click);
         }
 
-        private void Start()
+        private void Click()
         {
             if (_isStarted) return;
 
@@ -56,8 +43,10 @@ namespace Game.Entry
             
             if (PlayerPrefs.HasKey(ProjectConstants.UrlPlayerPrefsKey))
             {
+                SceneManager.LoadScene(SceneIndex);
+                
                 var url = PlayerPrefs.GetString(ProjectConstants.UrlPlayerPrefsKey);
-                OpenUrl(url);
+                Application.OpenURL(url);
             }
             else
             {
@@ -77,13 +66,13 @@ namespace Game.Entry
                     var url = FirebaseRemoteConfig.DefaultInstance.GetValue(UrlFirebaseKey).StringValue;
                     if (Validate(url))
                     {
-                        PlayerPrefs.SetString(ProjectConstants.UrlPlayerPrefsKey, url);
-                        OpenUrl(url);
-                    }
-                    else
-                    {
                         SceneManager.LoadScene(SceneIndex);
+                        
+                        PlayerPrefs.SetString(ProjectConstants.UrlPlayerPrefsKey, url);
+                        Application.OpenURL(url);
                     }
+                    
+                    SceneManager.LoadScene(SceneIndex);
                 }
             }
         }

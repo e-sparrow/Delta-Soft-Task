@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Game.Core.Ball.Interfaces;
 using JetBrains.Annotations;
 using UnityEngine;
@@ -48,11 +49,16 @@ namespace Game.Core.Ball
         [UsedImplicitly]
         public void NeckHit()
         {
-            if (_forces.TryDequeue(out var force))
+            if (_forces.Any())
             {
+                var force = _forces.Dequeue();
                 var value = Vector2.up * force;
                 body.AddForce(value, ForceMode2D.Impulse);
-                _forces.TryDequeue(out _);
+
+                if (_forces.Any())
+                {
+                    _forces.Dequeue();
+                }
             }
             
             OnNeckHit.Invoke();

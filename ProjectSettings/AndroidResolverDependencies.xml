@@ -50,11 +50,9 @@
     <file>Assets/Plugins/Android/com.google.firebase.firebase-abt-21.0.2.aar</file>
     <file>Assets/Plugins/Android/com.google.firebase.firebase-analytics-21.2.0.aar</file>
     <file>Assets/Plugins/Android/com.google.firebase.firebase-annotations-16.1.0.jar</file>
-    <file>Assets/Plugins/Android/com.google.firebase.firebase-app-unity-10.0.1.aar</file>
     <file>Assets/Plugins/Android/com.google.firebase.firebase-common-20.2.0.aar</file>
     <file>Assets/Plugins/Android/com.google.firebase.firebase-components-17.0.1.aar</file>
     <file>Assets/Plugins/Android/com.google.firebase.firebase-config-21.2.0.aar</file>
-    <file>Assets/Plugins/Android/com.google.firebase.firebase-config-unity-10.0.1.aar</file>
     <file>Assets/Plugins/Android/com.google.firebase.firebase-installations-17.0.3.aar</file>
     <file>Assets/Plugins/Android/com.google.firebase.firebase-installations-interop-17.0.2.aar</file>
     <file>Assets/Plugins/Android/com.google.firebase.firebase-measurement-connector-19.0.0.aar</file>

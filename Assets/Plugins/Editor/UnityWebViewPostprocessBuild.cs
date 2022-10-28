@@ -18,7 +18,7 @@ public class UnityWebViewPostprocessBuild : IPostGenerateGradleAndroidProject
 public class UnityWebViewPostprocessBuild
 #endif
 {
-    private static bool nofragment = false;
+    private static bool nofragment = true;
 
     //// for android/unity 2018.1 or newer
     //// cf. https://forum.unity.com/threads/android-hardwareaccelerated-is-forced-false-in-all-activities.532786/
