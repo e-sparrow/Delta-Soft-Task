@@ -5,7 +5,7 @@ public static class CheckSim
     public static bool HasSim()
     {
         #if UNITY_ANDROID
-        using (var plugin = new AndroidJavaClass("com.esparrow.check-sim-card.Plugin"))
+        using (var plugin = new AndroidJavaClass("com.esparrow.checksim.Plugin"))
         {
             var result = plugin.CallStatic<bool>("HasSim");
             return result;

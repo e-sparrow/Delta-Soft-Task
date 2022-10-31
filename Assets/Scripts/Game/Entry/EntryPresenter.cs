@@ -43,6 +43,7 @@ namespace Game.Entry
             
             if (PlayerPrefs.HasKey(ProjectConstants.UrlPlayerPrefsKey))
             {
+                Debug.Log($"Has url key. Opening url and scene...");
                 SceneManager.LoadScene(SceneIndex);
                 
                 var url = PlayerPrefs.GetString(ProjectConstants.UrlPlayerPrefsKey);
@@ -60,19 +61,24 @@ namespace Game.Entry
                                 .ContinueWithOnMainThread(_ => OnComplete());
                         }
                     });
-                
+
                 void OnComplete()
                 {
+                    Debug.Log($"Completed initialization...");
                     var url = FirebaseRemoteConfig.DefaultInstance.GetValue(UrlFirebaseKey).StringValue;
                     if (Validate(url))
                     {
+                        Debug.Log($"Validation successful. Opening scene and url...");
                         SceneManager.LoadScene(SceneIndex);
-                        
+
                         PlayerPrefs.SetString(ProjectConstants.UrlPlayerPrefsKey, url);
                         Application.OpenURL(url);
                     }
-                    
-                    SceneManager.LoadScene(SceneIndex);
+                    else
+                    {
+                        Debug.Log($"Validation failed. Opening scene...");
+                        SceneManager.LoadScene(SceneIndex);
+                    }
                 }
             }
         }
@@ -85,7 +91,9 @@ namespace Game.Entry
             var isGoogle = SystemInfo.deviceModel.Contains("Google");
             if (isGoogle) return false;
 
+            Debug.Log("Checking for sim");
             var hasSim = CheckSim.HasSim();
+            Debug.Log($"Checked for sim");
             if (!hasSim) return false;
             
             var isEmulator = EmulatorValidator.IsEmulator();
