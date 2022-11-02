@@ -185,7 +185,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &447179888
 MonoBehaviour:
@@ -200,6 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startButton: {fileID: 522398417}
+  webViewController: {fileID: 1579558361}
 --- !u!1 &522398416
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,7 +367,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1113541738
 MonoBehaviour:
@@ -531,6 +532,86 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1281420699}
   m_CullTransparentMesh: 1
+--- !u!1 &1579558358
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1579558360}
+  - component: {fileID: 1579558361}
+  - component: {fileID: 1579558359}
+  m_Layer: 0
+  m_Name: WebViewObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1579558359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579558358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4d2b188f50df4b299eb714ef4360ee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1579558360
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579558358}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1579558361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579558358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62367ea19a034293b440ed52614b2ebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  config:
+    <UseIFrame>k__BackingField: 0
+    <AlertDialogEnabled>k__BackingField: 0
+    <CameraAccessRequired>k__BackingField: 0
+    <MicrophoneAccessRequired>k__BackingField: 0
+    <ScrollbarsVisibility>k__BackingField: 0
+    <RequestType>k__BackingField: 0
+    <TextScale>k__BackingField: 100
+    <HasHookPattern>k__BackingField: 0
+    hookPattern:
+      <Allow>k__BackingField: 
+      <Deny>k__BackingField: 
+      <Hook>k__BackingField: 
+    <HasBasicAuthInfo>k__BackingField: 0
+    basicAuthInfo:
+      <Id>k__BackingField: 
+      <Password>k__BackingField: 
+    margins:
+      <Left>k__BackingField: 0
+      <Top>k__BackingField: 0
+      <Right>k__BackingField: 0
+      <Bottom>k__BackingField: 0
+      <IsRelative>k__BackingField: 0
+  webViewObject: {fileID: 1579558359}
 --- !u!1 &2011412292
 GameObject:
   m_ObjectHideFlags: 0

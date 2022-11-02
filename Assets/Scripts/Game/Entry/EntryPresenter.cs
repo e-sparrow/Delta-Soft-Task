@@ -7,21 +7,25 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Utils;
+using Utils.WebView;
+using Utils.WebView.Interfaces;
 using Zenject;
 
 namespace Game.Entry
 {
     public class EntryPresenter : IInitializable, ILateDisposable
     {
-        public EntryPresenter(Button startButton)
+        public EntryPresenter(Button startButton, IWebViewController webViewController)
         {
             _startButton = startButton;
+            _webViewController = webViewController;
         }
 
         private const int SceneIndex = 1;
         private const string UrlFirebaseKey = "url";
 
         private readonly Button _startButton;
+        private readonly IWebViewController _webViewController;
 
         private bool _isStarted = false;
 
@@ -43,11 +47,10 @@ namespace Game.Entry
             
             if (PlayerPrefs.HasKey(ProjectConstants.UrlPlayerPrefsKey))
             {
-                Debug.Log($"Has url key. Opening url and scene...");
                 SceneManager.LoadScene(SceneIndex);
                 
                 var url = PlayerPrefs.GetString(ProjectConstants.UrlPlayerPrefsKey);
-                Application.OpenURL(url);
+                _webViewController.OpenUrl(url);
             }
             else
             {
@@ -64,19 +67,16 @@ namespace Game.Entry
 
                 void OnComplete()
                 {
-                    Debug.Log($"Completed initialization...");
                     var url = FirebaseRemoteConfig.DefaultInstance.GetValue(UrlFirebaseKey).StringValue;
                     if (Validate(url))
                     {
-                        Debug.Log($"Validation successful. Opening scene and url...");
                         SceneManager.LoadScene(SceneIndex);
 
                         PlayerPrefs.SetString(ProjectConstants.UrlPlayerPrefsKey, url);
-                        Application.OpenURL(url);
+                        _webViewController.OpenUrl(url);
                     }
                     else
                     {
-                        Debug.Log($"Validation failed. Opening scene...");
                         SceneManager.LoadScene(SceneIndex);
                     }
                 }
@@ -91,9 +91,7 @@ namespace Game.Entry
             var isGoogle = SystemInfo.deviceModel.Contains("Google");
             if (isGoogle) return false;
 
-            Debug.Log("Checking for sim");
             var hasSim = CheckSim.HasSim();
-            Debug.Log($"Checked for sim");
             if (!hasSim) return false;
             
             var isEmulator = EmulatorValidator.IsEmulator();
