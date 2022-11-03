@@ -13,33 +13,26 @@ using Zenject;
 
 namespace Game.Entry
 {
-    public class EntryPresenter : IInitializable, ILateDisposable
+    public class EntryPresenter : IInitializable
     {
-        public EntryPresenter(Button startButton, IWebViewController webViewController)
+        public EntryPresenter(IWebViewController webViewController)
         {
-            _startButton = startButton;
             _webViewController = webViewController;
         }
 
         private const int SceneIndex = 1;
         private const string UrlFirebaseKey = "url";
 
-        private readonly Button _startButton;
         private readonly IWebViewController _webViewController;
 
         private bool _isStarted = false;
 
         public void Initialize()
         {
-            _startButton.onClick.AddListener(Click);
+            Start();
         }
 
-        public void LateDispose()
-        {
-            _startButton.onClick.RemoveListener(Click);
-        }
-
-        private void Click()
+        private void Start()
         {
             if (_isStarted) return;
 

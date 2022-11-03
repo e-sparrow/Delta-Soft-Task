@@ -100,6 +100,26 @@ namespace Utils.WebView
             _webViewObject.Value.StartCoroutine(OpenPageCoroutine(url));
         }
 
+        public void GoBack()
+        {
+            if (_webViewObject.Value.CanGoBack())
+            {
+                _webViewObject.Value.GoBack();
+            }
+            
+            Debug.LogWarning($"<color=red><b>Can't</b></color> go back!");
+        }
+
+        public void GoForward()
+        {
+            if (_webViewObject.Value.CanGoForward())
+            {
+                _webViewObject.Value.GoForward();
+            }
+            
+            Debug.LogWarning($"<color=red><b>Can't</b></color> go forward!");
+        }
+
         private WebViewObject GetWebViewObject()
         {
             if (_hasInstance)
