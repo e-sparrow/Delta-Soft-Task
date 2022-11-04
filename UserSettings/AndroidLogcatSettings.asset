@@ -3,29 +3,11 @@
     "m_SelectedPackage": {
         "deviceId": "RFCR90ZLV7D",
         "name": "noisteuro.sonto",
-        "processId": 7831,
+        "processId": 18111,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
-        {
-            "deviceId": "RFCR90ZLV7D",
-            "name": "noisteuro.sonto",
-            "processId": 28106,
-            "exited": true
-        },
-        {
-            "deviceId": "RFCR90ZLV7D",
-            "name": "noisteuro.sonto",
-            "processId": 29616,
-            "exited": true
-        },
-        {
-            "deviceId": "RFCR90ZLV7D",
-            "name": "noisteuro.sonto",
-            "processId": 32603,
-            "exited": true
-        },
         {
             "deviceId": "RFCR90ZLV7D",
             "name": "noisteuro.sonto",
@@ -36,6 +18,30 @@
             "deviceId": "RFCR90ZLV7D",
             "name": "noisteuro.sonto",
             "processId": 7831,
+            "exited": true
+        },
+        {
+            "deviceId": "RFCR90ZLV7D",
+            "name": "noisteuro.sonto",
+            "processId": 13308,
+            "exited": true
+        },
+        {
+            "deviceId": "RFCR90ZLV7D",
+            "name": "noisteuro.sonto",
+            "processId": 13852,
+            "exited": true
+        },
+        {
+            "deviceId": "RFCR90ZLV7D",
+            "name": "com.sec.android.app.launcher",
+            "processId": 3013,
+            "exited": false
+        },
+        {
+            "deviceId": "RFCR90ZLV7D",
+            "name": "noisteuro.sonto",
+            "processId": 18111,
             "exited": false
         }
     ],
